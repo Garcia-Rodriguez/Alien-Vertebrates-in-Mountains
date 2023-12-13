@@ -2,11 +2,10 @@
 PKGs <- c("raster","rlang", "rgbif", "dplyr","scrubr", "rgdal","maps", "maptools", "exactextractr","sp","spocc","plyr", "tidyverse", "pbapply", "sf", "ggplot2", "rgeos", "R.utils","data.table", "here", "rgdal",  "RColorBrewer",  "letsR", "rasterVis", "beepr", "circlize", "stringr", "moments", "diptest", "corrplot", "AER", "sjPlot", "sjmisc", "sjlabelled", "ggpubr", "blmeco","partR2", "magrittr", "glmm.hp", "GLMMadaptive", "gridExtra", "lme4", "furrr")
 sapply(PKGs, require, character.only = TRUE)
 
-
-setwd("C:/Users/Lenovo/Dropbox/PROJECTS_VIENNA/MOUNTAIN INVASIONS")
+setwd("your_path")
 
 ##Load data (Mountain level info, Alien Richness as response variable + predictors tested)
-data<-read.csv("VADENUEVO/FOR SUBMISSION/NEEsubmission/Codes/DataPredictors.csv", sep=";")
+data<-read.csv("~/DataPredictors.csv", sep=";")
 
 ##Test for multicolinearity among predictors
 preds<-data[, c(15:24)] ##Choose numeric predictors
