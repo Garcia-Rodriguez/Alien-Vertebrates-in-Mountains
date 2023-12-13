@@ -3,9 +3,9 @@ PKGs <- c("viridis","raster","ecospat","rlang", "rgbif", "dplyr","scrubr", "rgda
 sapply(PKGs, require, character.only = TRUE)
 
 ###NULL MODELS TO TEST ALIEN VERTEBRATE FLOWS AMONG REALMS
-setwd("C:/Users/LENOVO/Dropbox/PROJECTS_VIENNA/MOUNTAIN INVASIONS/")
+setwd("your_path")
 
-All.verts.nat.realms<-read.csv("VADENUEVO/FOR SUBMISSION/NEEsubmission/Codes/Spp.nat.realms.csv", sep=";")
+All.verts.nat.realms<-read.csv("~/Spp.nat.realms.csv", sep=";")
 
 #Define list of realms
 realms<-unique(All.verts.nat.realms$WWF_REALM2)
@@ -18,7 +18,7 @@ spp.mult.realms<-realms.by.spp[realms.by.spp$freq>1, ]### species occurring in m
 n.spp<-nrow(full.pool)-sum(spp.mult.realms$freq)+ nrow(spp.mult.realms)### Total pool 37973 spp
 
 ##LOAD TABLE WITH OBSERVED TOTAL FLOWS
-flows<-read.csv("VADENUEVO/RESULTS/FLOWS/Table_Flows.csv")
+flows<-read.csv("~/Table_Flows.csv")
 flows.all<-data.frame(janitor::row_to_names(flows[,1:3], row_number = 1))
 
 ##CALCULATE EXPECTED FLOWS
@@ -41,7 +41,7 @@ exp.flows$flow<-paste(substr(exp.flows[,1],1,3), "-",substr(exp.flows[,2],1,3)) 
 flow.id<-sort(unique(exp.flows$flow)) ##retrieve the names of the flows (total 64 combinations)
 
 ###REFERENCE TO COMPARE THE RESULTS
-obs.flows.all<-read.csv("VADENUEVO/RESULTS/FLOWS/MatrixFromTo/AllFromTo.csv")
+obs.flows.all<-read.csv("~/AllFromTo.csv")
 obs.flows.all$flow<-paste(obs.flows.all[,2],"-",obs.flows.all[,3])
 names(obs.flows.all)
 ###ADD 0's to non detected flows.
