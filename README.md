@@ -12,4 +12,4 @@ This repository contains:
    
 5. DataPredictors.csv: Values of overall alien richness and alien richness for each taxonomic group as well as the quantified predictors for the > 2500 mountains studied)
    
-6. GLM.R: GLMs implemented to identify the predictors that better explaining the variation in alien richness across mountains worlwide, using the data provided in point 5.
+6. GLM.R: GLMs implemented to identify the predictors that better explain the variation in alien richness across mountains worlwide, using the data provided in point 5.
