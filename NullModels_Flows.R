@@ -7,7 +7,7 @@ setwd("your_path")
 
 All.verts.nat.realms<-read.csv("~/Spp.nat.realms.csv", sep=";")
 
-#Define list of realms
+#Define list of realms including data
 realms<-unique(All.verts.nat.realms$WWF_REALM2)
 realms<-sort(realms[1:8])
 
@@ -64,6 +64,7 @@ signif<-lapply(1:length(flow.id),function(x){
 
 p.table<-do.call(rbind,signif)
 
+##Plots
 plots<-pblapply(1:length(flow.id), function(x)
 {
   N.species<-exp.flows[exp.flows$flow==flow.id[x], 3] #get the 1000 value obtained for each specific flow
